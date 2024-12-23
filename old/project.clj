@@ -26,6 +26,7 @@
    [org.clojure/core.match "1.0.1"]
    [org.clojure/data.avl "0.1.0"]
    [org.clojure/data.csv "1.0.1"]
+   [org.clojure/data.json "2.5.0"]
    [org.clojure/data.xml "0.2.0-alpha8"]
    [org.clojure/math.combinatorics "0.1.6"]
    [org.clojure/spec.alpha "0.3.218"]
@@ -34,7 +35,6 @@
 
    ; other libs
    [camel-snake-kebab/camel-snake-kebab "0.4.3"]
-   [cheshire/cheshire "5.11.0"] ; #todo switch to muuntaja/jsonista
    [clj-time/clj-time "0.15.2"]
    [danlentz/clj-uuid "0.1.9"]
    [joda-time/joda-time "2.12.2"]
@@ -113,6 +113,3 @@
              ; "--illegal-access=permit"  ; may need for Java10+  [ permit, warn, debug, deny ]
              ]
   )
-
-
-

@@ -63,6 +63,11 @@
       <version>1.0.1</version>
     </dependency>
     <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>data.json</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.clj-commons</groupId>
       <artifactId>claypoole</artifactId>
       <version>1.2.2</version>
@@ -81,11 +86,6 @@
       <groupId>org.clojure</groupId>
       <artifactId>math.combinatorics</artifactId>
       <version>0.1.6</version>
-    </dependency>
-    <dependency>
-      <groupId>cheshire</groupId>
-      <artifactId>cheshire</artifactId>
-      <version>5.11.0</version>
     </dependency>
     <dependency>
       <groupId>org.clojure</groupId>
