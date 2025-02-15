@@ -33,7 +33,7 @@
     [tupelo.core.impl :as impl]
     [tupelo.lexical :as lex]
     [tupelo.schema :as tsk])
-  #?(:clj (:require [cheshire.core :as cheshire]
+  #?(:clj (:require [clojure.data.json :as json]
                     [clojure.core.match :as ccm]
                     [flatland.ordered.map :as omap]
                     [flatland.ordered.set :as oset]
@@ -419,15 +419,15 @@
 #?(:clj  (do
            ; #todo add test & README
            (s/defn json->edn
-             "Shortcut to cheshire.core/parse-string"
+             "Shortcut to clojure.data.json/read-str (keywordizing keys)"
              [json-str :- s/Str]
-             (unlazy (cheshire/parse-string json-str true))) ; true => keywordize-keys
+             (unlazy (json/read-str json-str :key-fn keyword)))
 
            ; #todo add test & README
            (s/defn edn->json :- s/Str
-             "Shortcut to cheshire.core/generate-string"
+             "Shortcut to clojure.data.json/write-string"
              [arg]
-             (cheshire/generate-string arg)))
+             (json/write-str arg)))
    :cljs (do
            ; #todo add test & README
            (s/defn json->edn
@@ -3707,5 +3707,3 @@
 ;
 ; #todo make it handle either tst.orig.namespace or orig.namespace-test
 ; #todo make it a macro to accept unquoted namespace values
-
-
